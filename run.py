@@ -1,3 +1,4 @@
+
 """
     -------BATTLESHIPS 101------
     How it will work:
@@ -10,9 +11,29 @@
     6. If all ships are unearthed before using up all bullets, you win
         else, you lose and it's game over!
 
-    Legend
+    Legend:
     'X' indicates the ships hit
     '-' indicates the hits missed
-    '' indicates available space        
-
+    '' indicates available space
 """
+
+# Global variable for grid
+grid = [[]]
+# Global variable for grid size
+grid_size = 8
+# Global variable for number of ships to place
+num_of_ships = 5
+# Global variable for bullets left
+bullets_left = 50
+# Global variable for game over
+game_over = False
+# Global variable for number of ships sunk
+num_of_ships_sunk = 0
+# Global variable for ship positions
+ship_positions = [[]]
+# Board for holding ship locations
+HIDDEN_BOARD = [[''] * 8 for x in range(8)]
+# Board for displaying hits and miss
+GUESS_BOARD = [[''] * 8 for x in range(8)]
+
+let_to_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
