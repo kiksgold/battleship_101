@@ -2,7 +2,7 @@
 """
     -------BATTLESHIPS 101------
     How it will work:
-    1. A 8x18 grid will have 5 ships of variable length randomly placed about
+    1. A 8x8 grid will have 5 ships of variable length randomly placed about
     2. You will have 50 bullets to take down the ships that are placed down
     3. You can choose a row and column such as A3 to indicate where to shoot
     4. For every shot that hits or misses it will show up in the grid
@@ -17,23 +17,9 @@
     '' indicates available space
 """
 
-# Global variable for grid
-grid = [[]]
-# Global variable for grid size
-grid_size = 8
-# Global variable for number of ships to place
-num_of_ships = 5
-# Global variable for bullets left
-bullets_left = 50
-# Global variable for game over
-game_over = False
-# Global variable for number of ships sunk
-num_of_ships_sunk = 0
-# Global variable for ship positions
-ship_positions = [[]]
-# Board for holding ship locations
-HIDDEN_BOARD = [[''] * 8 for x in range(8)]
-# Board for displaying hits and miss
-GUESS_BOARD = [[''] * 8 for x in range(8)]
+# Grid for holding ship locations
+HIDDEN_GRID = [[''] * 8 for x in range(8)]
+# Grid for displaying hits and miss
+GUESS_GRID = [[''] * 8 for x in range(8)]
 
 let_to_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
