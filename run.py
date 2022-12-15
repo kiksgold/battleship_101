@@ -28,8 +28,8 @@ let_to_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I
 
 # Define Function to Print Battleship grid size
 def print_grid(grid):
-    print(' A B C D E F G H')
-    print(' ---------------')
+    print(' A B C D E F G H I J')
+    print(' -------------------')
     row_num = 1
     for row in grid:
         print("%d|%s|" % (row_num, "|".join(row)))
@@ -71,5 +71,30 @@ def count_hit_ships(board):
     return count
 
 
-
+#  Run all our functions here
+create_ships(HIDDEN_GRID)
+# print_grid(HIDDEN_GRID)
+turns = 6
+while turns > 0:
+    print('Welcome to Battleship 101!!!\n')
+    print("Let's play!")
+    print_grid(GUESS_GRID)
+    row, column = get_ship_location()
+    if GUESS_GRID[row][column] == '-':
+        print(' You already guessed that')
+    elif HIDDEN_GRID[row][column] == 'X':
+        print('Congratulations, you have hit the battleship')
+        GUESS_GRID[row][column] = 'X'
+        turns -= 1
+    else:
+        print('Sorry, you missed!')
+        GUESS_GRID[row][column] = '-'
+        turns -= 1
+    if count_hit_ships(GUESS_GRID) == 5:
+        print('Congratulations, you have sunk all the battleships')
+        break
+    print('You have ' + str(turns) + ' turns remaining')
+    if turns == 0:
+        print('Sorry, you ran out of turns, the game is over')
+        break
 
