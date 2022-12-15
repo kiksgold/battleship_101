@@ -40,12 +40,26 @@ def print_grid(grid):
 def create_ships(grid):
     for ship in range(5):
         ship_row, ship_column = randint(0, 7), randint(0, 7)
-        while board[ship_row][ship_column] == 'X':
+        while grid[ship_row][ship_column] == 'X':
             ship_row, ship_column = randint(0, 7), randint(0, 7)
-        board[ship_row][ship_column] = 'X'
+        grid[ship_row][ship_column] = 'X'
 
+
+# Define Function to get ship location
 def get_ship_location():
-    pass
+    # Enter the row number between 1 to 8
+    row = input('Please enter a ship row 1-8: ')
+    while row not in '12345678':
+        print("Please enter a valid row")
+        row = input('Please enter a ship row 1-8: ')
+
+    # Enter the Ship column from A TO H
+    column = input('Please enter a ship column A-H: ').upper()
+    while column not in 'ABCDEFGH':
+        print("Please enter a valid column")
+        column = input('Please enter a ship column A-H: ').upper()
+    return int(row) -1, let_to_num[column]
+
 
 def count_hit_ships():
     pass
