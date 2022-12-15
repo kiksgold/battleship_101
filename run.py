@@ -48,17 +48,18 @@ def create_ships(grid):
 # Define Function to get ship location
 def get_ship_location():
     # Enter the row number between 1 to 10
-    row = input('Please enter a ship row 1-10: ')
-    while row not in '12345678':
+    row = input('Please enter a ship row 1-10:\n ')
+    while row not in '12345678910':
         print("Please enter a valid row")
-        row = input('Please enter a ship row 1-10: ')
+        row = input('Please enter a ship row 1-10:\n ')
 
     # Enter the Ship column from A TO J
-    column = input('Please enter a ship column A-J: ').upper()
-    while column not in 'ABCDEFGH':
+    column = input('Please enter a ship column A-J:\n ').upper()
+    while column not in 'ABCDEFGHIJ':
         print("Please enter a valid column")
-        column = input('Please enter a ship column A-J: ').upper()
+        column = input('Please enter a ship column A-J:\n ').upper()
     return int(row) -1, let_to_num[column]
+    print('You have ' + str(turns) + ' turns remaining \n')
 
 
 # Define Function to count hit ships
@@ -76,8 +77,9 @@ create_ships(HIDDEN_GRID)
 # print_grid(HIDDEN_GRID)
 turns = 6
 while turns > 0:
-    print('Welcome to Battleship 101!!!\n')
-    print("Let's play!")
+    print('Welcome to Battleship 101!!!')
+    print('You have 6 turns to take down 5 ships \n')
+    print("Let's play!\n")
     print_grid(GUESS_GRID)
     row, column = get_ship_location()
     if GUESS_GRID[row][column] == '-':
