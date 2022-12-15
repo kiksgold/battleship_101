@@ -46,35 +46,80 @@ If all ships are unearthed before using up all bullets, you win else, you lose a
         </li>
         <li>we used a letter to number dictionary which is the form of key-value pair
         </li>
-        <li>update our ticket worksheet
-        </li>
         </ul>
 
 ![ImageHere](./docs/features/request_ticket.png)
 
-   <li>Calculate the unsold-tickets
+   <li>The Create Ship Function
     </li>
         <ul>
-        <li>compare tickets sold with the inventory inorder to calculate the unsold (if any) for each category
+        <li>from random we import randint
         </li>
-        <li>calculate the unsold tickets
+        <li>we use the for loop function to create 5 ships
         </li>
-        <li>updates the unsold worksheet in our spreadsheet
+        <li>The ship row is the number [1-10]
+        </li>
+        <li>the ship column is the alphabet [A-J]
+        </li>
+        <li>the randint randomly assigns values to the ship row and column
+        </li>
+        <li>the while loop function continues until the grid row and column is X
+        </li>
+        <li>The grid will get the values ‘X’ once the hidden pattern and guess pattern hits the same ship
         </li>
         </ul>
 
 ![ImageHere](./docs/features/unsold_ticket.png)
 
-<li>Calculate inventory based on averages from the last 3 events
+<li>Define Print Grid
 </li>
     <ul>
-    <li>calculate the average inventory
+    <li>the function print the column grid from A-J
     </li>
-    <li>the user adds a 20% margin to the calculated averages for future events
+    <li>prints the row number "|" symbol for each row on the grid
     </li>
-    <li>updates our inventory worksheet
+    </ul>
+
+![ImageHere](./docs/features/inventory_ticket.png)
+
+<li>Function for ship location
+</li>
+    <ul>
+    <li>this validates the row number and column
     </li>
-    <li>make recommendations
+    <li>return the function row ess by 1 than the value provided and let_to_num[column]
+    </li>
+    </ul>
+
+![ImageHere](./docs/features/inventory_ticket.png)
+
+<li>Function for counting ships
+</li>
+    <ul>
+    <li>the count is assigned 0
+    </li>
+    <li>for each row on the grid and each column in the row if the column ==’X’ the count increases by 1 and returns the count
+    </li>
+    <li>the function counts the number of ships hit and sunk.
+    </li>
+    </ul>
+
+![ImageHere](./docs/features/inventory_ticket.png)
+
+<li>The run all function
+</li>
+    <ul>
+    <li>we called the function create_ship that creates the ship
+    </li>
+    <li>The print_grid (Guess_Pattern) creates the guess_pattern grid.
+    </li>
+    <li>if the guess_pattern == ‘-‘  then it prints “You have already guessed”.
+    </li>
+    <li>If the hidden patterns Hidden_Pattern[row][column] == ‘X’: then it prints ‘ Congratulations you have hit the battleship’
+    </li>
+    <li>If the count_hit_ships and the guess_pattern are exactly same i.e 5 then it will print “Congratulations you have sunk all the battleships” 
+    </li>
+    <li>Once the turns value becomes zero the program will print “ Game over”.
     </li>
     </ul>
 
@@ -84,10 +129,8 @@ If all ships are unearthed before using up all bullets, you win else, you lose a
 
 
 ## Data Model
-<p> We imported a spreadsheet from google sheet, where we have our survey data </p>
-<p>Our spreadsheet has 3 columns for the different categories of ticket-sales</p>
-<p>It contains 10 rows of numbers from past events</p>
-<p>It has 3 worksheets for ticket-sales, unsold tickets and future-tickets </p>
+<p> from random import randint </p>
+
 
 ![ImageHere](./docs/features/ticket.png)
 ![ImageHere](./docs/features/unsold.png)
@@ -106,14 +149,6 @@ I have manually tested this project by doing the following:
 
 ## Bugs
 <ul>
-    <li> I got an error 'No module named gspread'
-        <ul>
-        <li>I debugged abd discovered my creds.json file was missing
-        </li>
-        <li>I the reinstalled 'pip3 install gspread google-auth'
-        </li>
-        </ul>
-    </li>
     <li>At the point of deplomyent to Heroku, I could not connet to git connect, i was getting 'internal servive error'. However i was able to deploy through git CLI
     </li>
 </ul>
@@ -132,10 +167,6 @@ I have manually tested this project by doing the following:
 
 ## Technology Used
 <ul>
-    <li>Gspread
-    </li>
-    <li>Github
-    </li>
     <li>run.py
     </li>
     <li>Heroku
