@@ -18,6 +18,40 @@ from random import randint
 #     '' indicates available space
 # """
 
+GRID_SIZE_MIN = 5
+GRID_SIZE_MAX = 26
+
+
+def start_game():
+    print('Welcome to Battleship 101!!!')
+    
+    grid_instruction = 'Please enter grid size between ' + str(GRID_SIZE_MIN) + ' and ' + str(GRID_SIZE_MAX) + ':\n'
+    grid_size_set = False
+    while grid_size_set is False:
+        grid_size = input(grid_instruction)
+        try:
+            grid_size = int(grid_size)
+            if (grid_size >= GRID_SIZE_MIN & grid_size <= GRID_SIZE_MAX):
+                grid_size_set = True
+            else:
+                grid_size = input(grid_instruction)
+        except:
+            grid_size = input(grid_instruction)
+
+    MAX_NUM_OF_SHIP = (grid_size * grid_size) - 1
+    ship_instruction = 'Please enter number of ship(s) between 1 and ' + str(MAX_NUM_OF_SHIP) + ':\n'
+    num_of_ship_set = False
+    while num_of_ship_set is False:
+        number_of_ships = input(ship_instruction)
+        try:
+            number_of_ships = int(number_of_ships)
+            if (number_of_ships > 0 & number_of_ships <= MAX_NUM_OF_SHIP):
+                num_of_ship_set = True
+            else:
+                number_of_ships = input(ship_instruction)
+        except:
+            number_of_ships = input(ship_instruction)
+
 GRID_SIZE = grid_size
 NUM_OF_SHIPS = number_of_ships
 
