@@ -18,15 +18,24 @@ from random import randint
 #     '' indicates available space
 # """
 
+GRID_SIZE = grid_size
+NUM_OF_SHIPS = number_of_ships
+
 # Grid for holding ship locations
 HIDDEN_GRID = [[''] * 10 for x in range(10)]
 # Grid for displaying hits and miss
 GUESS_GRID = [[''] * 10 for x in range(10)]
 
-let_to_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9}
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+LETTERS_LIST = [*LETTERS]
+
+grid_letters_list = [LETTERS_LIST[i] for i in range(GRID_SIZE)]
+grid_letters = ''.join(grid_letters_list)
+last_grid_letter = grid_letters_list[len(grid_letters_list) - 1]
 
 
-# Define Function to Print Battleship grid size
+# Function to Print Battleship grid size
 def print_grid(grid):
     print(' A B C D E F G H I J')
     print(' -------------------')
@@ -38,10 +47,10 @@ def print_grid(grid):
 
 # Define Function to create the ships
 def create_ships(grid):
-    for ship in range(5):
-        ship_row, ship_column = randint(0, 9), randint(0, 9)
+    for ship in range(NUM_OF_SHIPS):
+        ship_row, ship_column = randint(0, GRID_SIZE - 1), randint(0, GRID_SIZE - 1)
         while grid[ship_row][ship_column] == 'X':
-            ship_row, ship_column = randint(0, 9), randint(0, 9)
+            ship_row, ship_column = randint(0, GRID_SIZE - 1), randint(0, GRID_SIZE - 1)
         grid[ship_row][ship_column] = 'X'
 
 
