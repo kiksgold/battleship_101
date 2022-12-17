@@ -75,7 +75,7 @@ def get_shoot_location():
     print('You have ' + str(turns) + ' turns remaining \n')
 
 
-# Define Function to count hit ships
+# Function to count hit ships
 def count_hit_ships(board):
     count = 0
     for row in board:
@@ -85,16 +85,19 @@ def count_hit_ships(board):
     return count
 
 
-#  Run all our functions here
+#  Run all program functions here
 create_ships(HIDDEN_GRID)
 # print_grid(HIDDEN_GRID)
-turns = 6
+
+GAME TURNS = NUM_OF_SHIPS + 1
+turns = GAME_TURNS
 while turns > 0:
-    print('Welcome to Battleship 101!!!')
-    print('You have 6 turns to take down 5 ships \n')
-    print("Let's play!\n")
+    if turns == GAME_TURNS:
+        print('Welcome to Battleship 101!!!')
+        print("You have " + str(turns) + " turns to take down " + str(NUM_OF_SHIPS) + " ships \n")
+        print("Let's play!\n")
     print_grid(GUESS_GRID)
-    row, column = get_ship_location()
+    row, column = get_shoot_location()
     if GUESS_GRID[row][column] == '-':
         print(' You already guessed that')
     elif HIDDEN_GRID[row][column] == 'X':
@@ -105,7 +108,8 @@ while turns > 0:
         print('Sorry, you missed!')
         GUESS_GRID[row][column] = '-'
         turns -= 1
-    if count_hit_ships(GUESS_GRID) == 5:
+    if count_hit_ships(GUESS_GRID) == NUM_OF_SHIPS:
+        print_grid(GUESS_GRID)
         print('Congratulations, you have sunk all the battleships')
         break
     print('You have ' + str(turns) + ' turns remaining')
