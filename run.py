@@ -65,11 +65,13 @@ def get_shoot_location():
         row = input(row_instruction)
 
     # Enter the Ship column from A TO J
+    column_instruction = 'Please enter a ship column A-' + last_grid_letter + ':\n '
+    column = input(column_instruction).upper()
     column = input('Please enter a ship column A-J:\n ').upper()
-    while column not in 'ABCDEFGHIJ':
+    while column not in grid_letters:
         print("Please enter a valid column")
-        column = input('Please enter a ship column A-J:\n ').upper()
-    return int(row) -1, let_to_num[column]
+        column = input(column_instruction).upper()
+    return int(row) -1, LETTERS_LIST.index(column)
     print('You have ' + str(turns) + ' turns remaining \n')
 
 
