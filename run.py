@@ -56,11 +56,13 @@ def create_ships(grid):
 
 # Function to get the location to fire
 def get_shoot_location():
-    # Enter the row number between 1 to 10
-    row = input('Please enter a ship row 1-10:\n ')
-    while row not in '12345678910':
+    # Enter the row number between 1 to 
+    row_instruction = 'Please enter a ship row 1-' + str(GRID_SIZE) + ':\n '
+    rows = map(lambda x: str(x), list(range(1, GRID_SIZE + 1)))
+    row = input(row_instruction)
+    while row not in row_instruction:
         print("Please enter a valid row")
-        row = input('Please enter a ship row 1-10:\n ')
+        row = input(row_instruction)
 
     # Enter the Ship column from A TO J
     column = input('Please enter a ship column A-J:\n ').upper()
