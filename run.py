@@ -54,8 +54,8 @@ def create_ships(grid):
         grid[ship_row][ship_column] = 'X'
 
 
-# Define Function to get ship location
-def get_ship_location():
+# Function to get the location to fire
+def get_shoot_location():
     # Enter the row number between 1 to 10
     row = input('Please enter a ship row 1-10:\n ')
     while row not in '12345678910':
