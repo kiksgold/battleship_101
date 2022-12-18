@@ -11,7 +11,7 @@ The game is a discovery game which players need to discover their opponents ship
 
 https://battleship-101.herokuapp.com/
 
-![ImageHere](./docs/features/am_iresponsive.png)
+![ImageHere](./docs/features/amiresponsive.png)
 
 ## How it works
 <ul>
@@ -44,22 +44,22 @@ If all ships are unearthed before using up all bullets, you win else, you lose a
         </li>
         <li>we defined a guess grid of size 10
         </li>
-        <li>we used a letter to number dictionary which is the form of key-value pair
+        <li>we used a letter A-Z and numbers to form the grid
         </li>
         </ul>
 
-![ImageHere](./docs/features/request_ticket.png)
+![ImageHere](./docs/features/entergridsize.png)
 
    <li>The Create Ship Function
     </li>
         <ul>
         <li>from random we import randint
         </li>
-        <li>we use the for loop function to create 5 ships
+        <li>we use the for loop function to create the number of our ships
         </li>
-        <li>The ship row is the number [1-10]
+        <li>The ship row is the number [1-100]
         </li>
-        <li>the ship column is the alphabet [A-J]
+        <li>the ship column is the alphabet [A-Z]
         </li>
         <li>the randint randomly assigns values to the ship row and column
         </li>
@@ -69,29 +69,29 @@ If all ships are unearthed before using up all bullets, you win else, you lose a
         </li>
         </ul>
 
-![ImageHere](./docs/features/unsold_ticket.png)
+![ImageHere](./docs/features/creategrid.png)
 
 <li>Define Print Grid
 </li>
     <ul>
     <li>the function print the column grid from A-J
     </li>
-    <li>prints the row number "|" symbol for each row on the grid
+    <li>prints the row number ".|" symbol for each row on the grid
     </li>
     </ul>
 
-![ImageHere](./docs/features/inventory_ticket.png)
+![ImageHere](./docs/features/creategrid.png)
 
 <li>Function for ship location
 </li>
     <ul>
     <li>this validates the row number and column
     </li>
-    <li>return the function row ess by 1 than the value provided and let_to_num[column]
+    <li>return the function row less by 1 than the value provided and let_to_num[column]
     </li>
     </ul>
 
-![ImageHere](./docs/features/inventory_ticket.png)
+![ImageHere](./docs/features/printgrid.png)
 
 <li>Function for counting ships
 </li>
@@ -104,7 +104,7 @@ If all ships are unearthed before using up all bullets, you win else, you lose a
     </li>
     </ul>
 
-![ImageHere](./docs/features/inventory_ticket.png)
+![ImageHere](./docs/features/congratulations.png)
 
 <li>The run all function
 </li>
@@ -123,18 +123,10 @@ If all ships are unearthed before using up all bullets, you win else, you lose a
     </li>
     </ul>
 
-![ImageHere](./docs/features/inventory_ticket.png)
+![ImageHere](./docs/features/congratulations.png)
     
 </ul>
 
-
-## Data Model
-<p> from random import randint </p>
-
-
-![ImageHere](./docs/features/ticket.png)
-![ImageHere](./docs/features/unsold.png)
-![ImageHere](./docs/features/inventory.png)
 
 ## Testing
 I have manually tested this project by doing the following:
@@ -163,7 +155,6 @@ I have manually tested this project by doing the following:
 </li>
 </ul>
 
-![ImageHere](./docs/features/peponline_result.png)
 
 ## Technology Used
 <ul>
@@ -193,7 +184,7 @@ I have manually tested this project by doing the following:
 
 ## Credits
 <ul>
-<li>Love sandwiches walkthrough project
+<li>walkthrough project
 </li>
 <li>Sample Readme from Ultimate Battleship
 </li>

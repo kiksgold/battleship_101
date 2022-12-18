@@ -129,7 +129,7 @@ def start_game():
 
     #  Run all program functions here
     create_ships(HIDDEN_GRID)
-    print_grid(HIDDEN_GRID)
+    # print_grid(HIDDEN_GRID)
 
     GAME_TURNS = NUM_OF_SHIPS + 1
     turns = GAME_TURNS
