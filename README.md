@@ -1,13 +1,10 @@
 # Battleship 101 Game 
 
-The game is played on four grids, two for each player. The grids are typically square – usually 10×10 – and the individual squares in the grid are identified by letter and number.[10] On one grid the player arranges ships and records the shots by the opponent. On the other grid, the player records their own shots.
-
-Before play begins, each player secretly arranges their ships on their primary grid. Each ship occupies a number of consecutive squares on the grid, arranged either horizontally or vertically. The number of squares for each ship is determined by the type of ship. The ships cannot overlap (i.e., only one ship can occupy any given square in the grid). The types and numbers of ships allowed are the same for each player. These may vary depending on the rules. The ships should be hidden from players sight and it's not allowed to see each other's pieces. The game is a discovery game which players need to discover their opponents ship positions.[11]
 
 ## Introduction
-This game is the single-player battleship game, we have made used of grids. Each ship occupies a number of consecutive squares on the grid, arranged either horizontally or vertically. The number of squares for each ship is determined by the type of ship. The ships cannot overlap (i.e., only one ship can occupy any given square in the grid). This grids consists of 10 rows and 10 columns of the battleship where you can destroy and sink the ships.
+This game is the single-player battleship game, we have made used of grids. Each ship occupies a number of consecutive squares on the grid, arranged either horizontally or vertically. The number of squares for each ship is determined by the type of ship. The ships cannot overlap (i.e., only one ship can occupy any given square in the grid). This grids consists of a minimumof 5 rows and maximum of 26 rows and A-Z columns of the battleship where you can destroy and sink the ships.
 
-<p>For each event the organizers pre-sell tickets, if they sell out of a particular category, the organizers print more tickets to sell while the unsold ones are thrashed after the event.</p>
+
 
 ## Our main goal
 The game is a discovery game which players need to discover their opponents ship positions.
@@ -19,10 +16,13 @@ https://battleship-101.herokuapp.com/
 ## How it works
 <ul>
 <li>
- A 10x10 grid will have 5 ships randomly placed about
+ A grid size has been set to a minimum of 5 and maximum of 26
 </li>
 <li>
-You will have 6 turns to take down the ships that are placed down
+Players can choose the grid size they want to play
+</li>
+<li>
+Players can also choose the number of bullets to be shot
 </li>
 <li>
 You can choose a row and column such as B5 to indicate where to shoot
@@ -196,6 +196,10 @@ I have manually tested this project by doing the following:
 <li>Love sandwiches walkthrough project
 </li>
 <li>Sample Readme from Ultimate Battleship
+</li>
+<li>https://github.com/ArjanCodes/2022-coderoast-battleship/blob/main/after.py
+</li>
+<li>https://www.tutorialspoint.com/online_python_formatter.htm
 </li>
 <li>Tutor support
 </li>
